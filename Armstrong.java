@@ -1,0 +1,49 @@
+import java.math.*;
+
+public class Armstrong 
+{
+    public static void main(String[] args) 
+    {
+        int n1 = 50;
+        int n2 = 500;
+
+        equationArmstrong(n1,n2);
+        
+    }
+                                        //Numbers to print between to integers
+    static void equationArmstrong(int l, int h)
+    {
+        for(int j = l; j <= h; ++j)
+        {
+        //Calculating number of digits
+            int y = j;
+            int N = 0;
+        
+        while(y != 0)
+        {
+            y /= 10;
+            ++N;
+        }
+        //Calculating the sum of nth
+        //power of all the digits
+        int sum_power = 0;
+        y = j;
+        while(y != 0)
+        {
+            int d = y % 10;
+            sum_power += Math.pow(d, N);
+            y /= 10;
+        }
+        //Checking if the current number i
+        // is equal to the sum of nth
+        //power of all the digits
+        if(sum_power == j)
+        {
+            System.out.println(j + " ");
+        }
+    }
+
+    }
+
+    
+}
